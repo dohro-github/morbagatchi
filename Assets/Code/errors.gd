@@ -5,3 +5,7 @@ extends Control
 
 func _on_okay_nem_pressed() -> void:
 	nem.hide()
+
+
+func _on_okay_alo_pressed() -> void:
+	alo.hide()

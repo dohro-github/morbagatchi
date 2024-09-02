@@ -1,6 +1,8 @@
 extends Node
 
+var alo
 var nem
+
 var money_label
 var money = 0
 
@@ -23,14 +25,13 @@ func buy_item(item):
 		if money >= 15:
 			if items_owned.tophat != true:
 				add_item(items.tophat)
-				money -= 15
-				money_label.text = "Money:" + str(money)
-				items_owned.tophat = true
 			else:
-				print("you own this buddy")
+				alo.show()
 		else:
 			nem.show()
 
 func add_item(item):
 	if item == items.tophat:
-		print("has tophat")
+		money -= 15
+		money_label.text = "Money:" + str(money)
+		items_owned.tophat = true

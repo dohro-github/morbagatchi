@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bj5jfcvnvuteg"]
+[gd_scene load_steps=24 format=3 uid="uid://bj5jfcvnvuteg"]
 
 [ext_resource type="Script" path="res://Assets/Code/main.gd" id="1_mc1ip"]
 [ext_resource type="Texture2D" uid="uid://bxiajexwnfj0w" path="res://Assets/Art/Windows/windows.png" id="2_yf2pr"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://b6nvndgdx1lih" path="res://Assets/Art/morbs/paladin.png" id="18_dyfx1"]
 [ext_resource type="PackedScene" uid="uid://0fdi8wslf8ep" path="res://scenes/shop.tscn" id="18_k31uh"]
 [ext_resource type="FontFile" uid="uid://cx5234pn1h4qk" path="res://3X3Mono-drx1V.ttf" id="20_60ecv"]
+[ext_resource type="Texture2D" uid="uid://bpyybp3pvjui3" path="res://Assets/Art/morbs/corruption.png" id="20_vhp4d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_koggt"]
 size = Vector2(531, 127)
@@ -130,7 +131,7 @@ offset_bottom = 355.0
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 selected = 0
-item_count = 11
+item_count = 12
 popup/item_0/text = "Durable"
 popup/item_0/icon = ExtResource("7_k1ijk")
 popup/item_1/text = "One bit"
@@ -163,6 +164,9 @@ popup/item_9/id = 9
 popup/item_10/text = "Paladin"
 popup/item_10/icon = ExtResource("18_dyfx1")
 popup/item_10/id = 10
+popup/item_11/text = "Corruption"
+popup/item_11/icon = ExtResource("20_vhp4d")
+popup/item_11/id = 11
 
 [node name="Shop" type="Button" parent="UI/menu/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)

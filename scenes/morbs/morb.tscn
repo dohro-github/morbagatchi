@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5kwftd1r4kun"]
+[gd_scene load_steps=4 format=3 uid="uid://c5kwftd1r4kun"]
 
 [ext_resource type="Texture2D" uid="uid://dwkn3vgdl83dv" path="res://Assets/Art/morbs/durable.png" id="1_5hi5y"]
 [ext_resource type="Script" path="res://Assets/Code/morb.gd" id="1_m52ih"]
-[ext_resource type="Texture2D" uid="uid://beq6vnffymnt3" path="res://Assets/Art/tophat.png" id="3_c5wul"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4245q"]
 radius = 56.1427
@@ -19,12 +18,11 @@ scale = Vector2(7, 7)
 texture_normal = ExtResource("1_5hi5y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_4245q")
 
-[node name="Tophat" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(0, -68)
+[node name="tophat" type="Sprite2D" parent="."]
+position = Vector2(0, -70)
 scale = Vector2(7, 7)
-texture = ExtResource("3_c5wul")
 
 [connection signal="pressed" from="texture" to="." method="_on_texture_pressed"]
