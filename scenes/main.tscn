@@ -144,7 +144,7 @@ popup/item_9/text = "Fire"
 popup/item_9/icon = ExtResource("17_makeq")
 popup/item_9/id = 9
 
-[node name="Button" type="Button" parent="UI/VBoxContainer"]
+[node name="Shop" type="Button" parent="UI/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "Shop"

@@ -1,5 +1,7 @@
 extends Control
 
+var morb_scene = preload("res://scenes/morbs/morb.tscn")
+@onready var morb_node = get_parent().get_node("morbs")
 
 func _ready() -> void:
 	hide()
