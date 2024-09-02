@@ -17,6 +17,9 @@ func _ready() -> void:
 
 	# Initialize the last window position
 	last_window_position = DisplayServer.window_get_position()
+	
+	storeman.money_label = $money
+	storeman.sec_per_money(10, 5)
 
 func _process(_delta: float) -> void:
 	if is_held:

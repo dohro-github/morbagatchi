@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://0fdi8wslf8ep"]
+[gd_scene load_steps=8 format=3 uid="uid://0fdi8wslf8ep"]
 
 [ext_resource type="Script" path="res://Assets/Code/shop.gd" id="1_2bbkv"]
 [ext_resource type="Texture2D" uid="uid://by3i3mebxtmj0" path="res://Assets/Art/Windows/shop.png" id="1_4ux6g"]
 [ext_resource type="Texture2D" uid="uid://c8n2q4twj7heh" path="res://Assets/Art/exit.png" id="2_ppax2"]
+[ext_resource type="Texture2D" uid="uid://beq6vnffymnt3" path="res://Assets/Art/tophat.png" id="4_1h80s"]
+[ext_resource type="Texture2D" uid="uid://bvkiivd4td03l" path="res://Assets/Art/Windows/error.png" id="5_eqwjm"]
+[ext_resource type="Script" path="res://Assets/Code/errors.gd" id="5_qb7of"]
+[ext_resource type="FontFile" uid="uid://cx5234pn1h4qk" path="res://3X3Mono-drx1V.ttf" id="6_rdicq"]
 
 [node name="shop" type="Control"]
 layout_mode = 3
@@ -43,5 +47,53 @@ layout_mode = 2
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+text = "I WANT THE F-ING TOPHAT"
+icon = ExtResource("4_1h80s")
+
+[node name="Errors" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_qb7of")
+
+[node name="nem" type="Control" parent="Errors"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Errors/nem"]
+position = Vector2(250, 250)
+scale = Vector2(7.813, 7.813)
+texture = ExtResource("5_eqwjm")
+
+[node name="Label" type="Label" parent="Errors/nem"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 165.0
+offset_right = 431.0
+offset_bottom = 271.0
+theme_override_fonts/font = ExtResource("6_rdicq")
+theme_override_font_sizes/font_size = 25
+text = "You dont have enough money"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="okay_nem" type="Button" parent="Errors/nem"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 281.0
+offset_right = 362.0
+offset_bottom = 349.0
+theme_override_fonts/font = ExtResource("6_rdicq")
+text = "Okay"
+autowrap_mode = 3
+
+[node name="alo" type="Control" parent="Errors"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Errors/nem/okay_nem" to="Errors" method="_on_okay_nem_pressed"]

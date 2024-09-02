@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bj5jfcvnvuteg"]
+[gd_scene load_steps=23 format=3 uid="uid://bj5jfcvnvuteg"]
 
 [ext_resource type="Script" path="res://Assets/Code/main.gd" id="1_mc1ip"]
 [ext_resource type="Texture2D" uid="uid://bxiajexwnfj0w" path="res://Assets/Art/Windows/windows.png" id="2_yf2pr"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cngoauo6745t2" path="res://Assets/Art/morbs/fire.png" id="17_makeq"]
 [ext_resource type="Texture2D" uid="uid://b6nvndgdx1lih" path="res://Assets/Art/morbs/paladin.png" id="18_dyfx1"]
 [ext_resource type="PackedScene" uid="uid://0fdi8wslf8ep" path="res://scenes/shop.tscn" id="18_k31uh"]
+[ext_resource type="FontFile" uid="uid://cx5234pn1h4qk" path="res://3X3Mono-drx1V.ttf" id="20_60ecv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_koggt"]
 size = Vector2(531, 127)
@@ -33,6 +34,15 @@ script = ExtResource("1_mc1ip")
 position = Vector2(250, 250)
 scale = Vector2(7.8125, 7.8125)
 texture = ExtResource("2_yf2pr")
+
+[node name="money" type="Label" parent="."]
+offset_left = 22.0
+offset_top = 68.0
+offset_right = 134.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0.133333, 0.12549, 0.203922, 1)
+theme_override_fonts/font = ExtResource("20_60ecv")
+text = "Money: "
 
 [node name="buttons" type="Control" parent="."]
 layout_mode = 3
@@ -99,6 +109,7 @@ offset_bottom = 121.0
 script = ExtResource("6_xorek")
 
 [node name="menu" type="Control" parent="UI"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -119,7 +130,6 @@ offset_bottom = 355.0
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 selected = 0
-fit_to_longest_item = false
 item_count = 11
 popup/item_0/text = "Durable"
 popup/item_0/icon = ExtResource("7_k1ijk")

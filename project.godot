@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 morbius="*res://Assets/Code/morbuis.gd"
 morb="*res://Assets/Code/morb.gd"
+storeman="*res://Assets/Code/storeman.gd"
+main="*res://Assets/Code/main.gd"
 
 [display]
 
