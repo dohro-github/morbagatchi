@@ -30,7 +30,7 @@ func _process(_delta: float) -> void:
 		var window_movement = new_window_pos - last_window_position
 
 		# Apply an impulse to the rigid body based on window movement
-		rigid_body.apply_impulse(Vector2(window_movement * randf_range(1.5, 4)))
+		rigid_body.apply_impulse(Vector2(window_movement * randf_range(3, 4)))
 
 		# Update the last window position
 		last_window_position = new_window_pos

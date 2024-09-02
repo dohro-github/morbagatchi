@@ -4,6 +4,7 @@ extends RigidBody2D
 @onready var grandparent = get_parent().get_parent()
 @onready var UI = null
 @onready var morb_type = null
+@onready var menu = null
 
 func _ready():
 	morbius.morb = self
@@ -14,15 +15,16 @@ func _ready():
 		print("Grandparent is null")
 	else:
 		UI = grandparent.get_node("UI")
-		morb_type = UI.get_node("VBoxContainer/OptionButton")
+		menu = UI.get_node("menu")
+		morb_type = UI.get_node("menu/VBoxContainer/OptionButton")
 
 func _process(_delta):
 	if morb_type:
 		type_selected()
 
 func _on_texture_pressed() -> void:
-	if UI:
-		UI.show()
+	if UI and menu:
+		menu.show()
 
 func type_selected():
 	if morb_type.selected == 0:

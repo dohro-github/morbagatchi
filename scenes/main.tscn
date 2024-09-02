@@ -1,13 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://bj5jfcvnvuteg"]
+[gd_scene load_steps=21 format=3 uid="uid://bj5jfcvnvuteg"]
 
-[ext_resource type="Texture2D" uid="uid://bxiajexwnfj0w" path="res://Assets/Art/windows.png" id="1_gdsnw"]
 [ext_resource type="Script" path="res://Assets/Code/main.gd" id="1_mc1ip"]
+[ext_resource type="Texture2D" uid="uid://bxiajexwnfj0w" path="res://Assets/Art/Windows/windows.png" id="2_yf2pr"]
 [ext_resource type="Texture2D" uid="uid://c8n2q4twj7heh" path="res://Assets/Art/exit.png" id="3_aird1"]
 [ext_resource type="Texture2D" uid="uid://d3vnye0nttem0" path="res://Assets/Art/minimise.png" id="4_ufbn6"]
 [ext_resource type="PackedScene" uid="uid://c5kwftd1r4kun" path="res://scenes/morbs/morb.tscn" id="5_nwihd"]
 [ext_resource type="Script" path="res://Assets/Code/ui.gd" id="6_xorek"]
 [ext_resource type="Texture2D" uid="uid://dwkn3vgdl83dv" path="res://Assets/Art/morbs/durable.png" id="7_k1ijk"]
-[ext_resource type="Texture2D" uid="uid://oh8bv01lc7xy" path="res://Assets/Art/menu.png" id="7_lcuq7"]
+[ext_resource type="Texture2D" uid="uid://oh8bv01lc7xy" path="res://Assets/Art/Windows/menu.png" id="7_rk8fa"]
 [ext_resource type="Texture2D" uid="uid://deyi3hiq3boa" path="res://Assets/Art/morbs/bit-one.png" id="8_v87ex"]
 [ext_resource type="Texture2D" uid="uid://bdly1l7881rub" path="res://Assets/Art/morbs/bit-hundred.png" id="9_6fc1t"]
 [ext_resource type="Texture2D" uid="uid://bnipmg6xok61v" path="res://Assets/Art/morbs/bit-thousand.png" id="9_r1tcl"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://b1i1pofxhftjx" path="res://Assets/Art/morbs/smoke.png" id="14_i4naj"]
 [ext_resource type="Texture2D" uid="uid://d0r1c2j0mt16n" path="res://Assets/Art/morbs/raid.png" id="15_fws7b"]
 [ext_resource type="Texture2D" uid="uid://cngoauo6745t2" path="res://Assets/Art/morbs/fire.png" id="17_makeq"]
+[ext_resource type="PackedScene" uid="uid://0fdi8wslf8ep" path="res://scenes/shop.tscn" id="18_k31uh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_koggt"]
 size = Vector2(531, 127)
@@ -30,7 +31,7 @@ script = ExtResource("1_mc1ip")
 [node name="window" type="Sprite2D" parent="."]
 position = Vector2(250, 250)
 scale = Vector2(7.8125, 7.8125)
-texture = ExtResource("1_gdsnw")
+texture = ExtResource("2_yf2pr")
 
 [node name="buttons" type="Control" parent="."]
 layout_mode = 3
@@ -88,7 +89,6 @@ shape = SubResource("RectangleShape2D_gckrq")
 position = Vector2(119, 141)
 
 [node name="UI" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 128.0
@@ -97,19 +97,24 @@ offset_right = 168.0
 offset_bottom = 121.0
 script = ExtResource("6_xorek")
 
-[node name="Menu" type="Sprite2D" parent="UI"]
+[node name="menu" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Menu" type="Sprite2D" parent="UI/menu"]
 position = Vector2(121, 168)
 scale = Vector2(7.813, 7.813)
-texture = ExtResource("7_lcuq7")
+texture = ExtResource("7_rk8fa")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/menu"]
 layout_mode = 0
 offset_left = -58.0
 offset_top = 27.0
 offset_right = 299.0
 offset_bottom = 355.0
 
-[node name="OptionButton" type="OptionButton" parent="UI/VBoxContainer"]
+[node name="OptionButton" type="OptionButton" parent="UI/menu/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 selected = 0
@@ -144,12 +149,12 @@ popup/item_9/text = "Fire"
 popup/item_9/icon = ExtResource("17_makeq")
 popup/item_9/id = 9
 
-[node name="Shop" type="Button" parent="UI/VBoxContainer"]
+[node name="Shop" type="Button" parent="UI/menu/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "Shop"
 
-[node name="Close" type="TextureButton" parent="UI"]
+[node name="Close" type="TextureButton" parent="UI/menu"]
 layout_mode = 0
 offset_left = 263.0
 offset_top = -22.0
@@ -158,8 +163,17 @@ offset_bottom = -13.0
 scale = Vector2(3, 3)
 texture_normal = ExtResource("3_aird1")
 
+[node name="shop" parent="UI" instance=ExtResource("18_k31uh")]
+visible = false
+layout_mode = 1
+offset_left = -128.0
+offset_top = -81.0
+offset_right = -128.0
+offset_bottom = -81.0
+
 [connection signal="button_down" from="buttons/move_window" to="." method="_on_move_window_button_down"]
 [connection signal="button_up" from="buttons/move_window" to="." method="_on_move_window_button_up"]
 [connection signal="pressed" from="buttons/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="buttons/Minimise" to="." method="_on_minimise_pressed"]
-[connection signal="pressed" from="UI/Close" to="UI" method="_on_close_pressed"]
+[connection signal="pressed" from="UI/menu/VBoxContainer/Shop" to="UI" method="_on_shop_pressed"]
+[connection signal="pressed" from="UI/menu/Close" to="UI" method="_on_close_pressed"]

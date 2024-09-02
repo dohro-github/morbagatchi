@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://0fdi8wslf8ep"]
+
+[ext_resource type="Script" path="res://Assets/Code/shop.gd" id="1_2bbkv"]
+[ext_resource type="Texture2D" uid="uid://by3i3mebxtmj0" path="res://Assets/Art/Windows/shop.png" id="1_4ux6g"]
+[ext_resource type="Texture2D" uid="uid://c8n2q4twj7heh" path="res://Assets/Art/exit.png" id="2_ppax2"]
+
+[node name="shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2bbkv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(250, 250)
+scale = Vector2(7.813, 7.813)
+texture = ExtResource("1_4ux6g")
+
+[node name="Close" type="TextureButton" parent="."]
+offset_left = 419.0
+offset_top = 44.0
+offset_right = 428.0
+offset_bottom = 53.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("2_ppax2")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 86.0
+offset_right = 468.0
+offset_bottom = 446.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
