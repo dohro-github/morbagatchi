@@ -47,3 +47,5 @@ func type_selected():
 		sprite.texture_normal = load("res://Assets/Art/morbs/raid.png")
 	elif morb_type.selected == 9:
 		sprite.texture_normal = load("res://Assets/Art/morbs/fire.png")
+	elif morb_type.selected == 10:
+		sprite.texture_normal = load("res://Assets/Art/morbs/paladin.png")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bj5jfcvnvuteg"]
+[gd_scene load_steps=22 format=3 uid="uid://bj5jfcvnvuteg"]
 
 [ext_resource type="Script" path="res://Assets/Code/main.gd" id="1_mc1ip"]
 [ext_resource type="Texture2D" uid="uid://bxiajexwnfj0w" path="res://Assets/Art/Windows/windows.png" id="2_yf2pr"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://b1i1pofxhftjx" path="res://Assets/Art/morbs/smoke.png" id="14_i4naj"]
 [ext_resource type="Texture2D" uid="uid://d0r1c2j0mt16n" path="res://Assets/Art/morbs/raid.png" id="15_fws7b"]
 [ext_resource type="Texture2D" uid="uid://cngoauo6745t2" path="res://Assets/Art/morbs/fire.png" id="17_makeq"]
+[ext_resource type="Texture2D" uid="uid://b6nvndgdx1lih" path="res://Assets/Art/morbs/paladin.png" id="18_dyfx1"]
 [ext_resource type="PackedScene" uid="uid://0fdi8wslf8ep" path="res://scenes/shop.tscn" id="18_k31uh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_koggt"]
@@ -118,7 +119,8 @@ offset_bottom = 355.0
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 selected = 0
-item_count = 10
+fit_to_longest_item = false
+item_count = 11
 popup/item_0/text = "Durable"
 popup/item_0/icon = ExtResource("7_k1ijk")
 popup/item_1/text = "One bit"
@@ -148,6 +150,9 @@ popup/item_8/id = 8
 popup/item_9/text = "Fire"
 popup/item_9/icon = ExtResource("17_makeq")
 popup/item_9/id = 9
+popup/item_10/text = "Paladin"
+popup/item_10/icon = ExtResource("18_dyfx1")
+popup/item_10/id = 10
 
 [node name="Shop" type="Button" parent="UI/menu/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
