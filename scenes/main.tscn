@@ -115,6 +115,14 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="ColorRect" type="ColorRect" parent="UI/menu"]
+layout_mode = 0
+offset_left = -116.0
+offset_top = -92.0
+offset_right = 366.0
+offset_bottom = 431.0
+color = Color(1, 1, 1, 0)
+
 [node name="Menu" type="Sprite2D" parent="UI/menu"]
 position = Vector2(121, 168)
 scale = Vector2(7.813, 7.813)

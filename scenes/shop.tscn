@@ -52,13 +52,13 @@ text = "Tophat"
 icon = ExtResource("4_1h80s")
 
 [node name="Errors" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("5_qb7of")
 
 [node name="nem" type="Control" parent="Errors"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -92,6 +92,7 @@ text = "Okay"
 autowrap_mode = 3
 
 [node name="alo" type="Control" parent="Errors"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
