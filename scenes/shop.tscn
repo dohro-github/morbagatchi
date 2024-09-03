@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://0fdi8wslf8ep"]
+[gd_scene load_steps=7 format=3 uid="uid://0fdi8wslf8ep"]
 
 [ext_resource type="Script" path="res://Assets/Code/shop.gd" id="1_2bbkv"]
 [ext_resource type="Texture2D" uid="uid://by3i3mebxtmj0" path="res://Assets/Art/Windows/shop.png" id="1_4ux6g"]
 [ext_resource type="Texture2D" uid="uid://c8n2q4twj7heh" path="res://Assets/Art/exit.png" id="2_ppax2"]
-[ext_resource type="Texture2D" path="res://Assets/Art/tophat.png" id="4_1h80s"]
 [ext_resource type="Texture2D" uid="uid://bvkiivd4td03l" path="res://Assets/Art/Windows/error.png" id="5_eqwjm"]
 [ext_resource type="Script" path="res://Assets/Code/errors.gd" id="5_qb7of"]
 [ext_resource type="FontFile" uid="uid://cx5234pn1h4qk" path="res://3X3Mono-drx1V.ttf" id="6_rdicq"]
@@ -49,7 +48,6 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "Tophat"
-icon = ExtResource("4_1h80s")
 
 [node name="Errors" type="Control" parent="."]
 anchors_preset = 0
@@ -103,6 +101,7 @@ scale = Vector2(7.813, 7.813)
 texture = ExtResource("5_eqwjm")
 
 [node name="Label" type="Label" parent="Errors/alo"]
+layout_mode = 0
 offset_left = 70.0
 offset_top = 165.0
 offset_right = 431.0
@@ -115,6 +114,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="okay_alo" type="Button" parent="Errors/alo"]
+layout_mode = 0
 offset_left = 131.0
 offset_top = 281.0
 offset_right = 362.0
